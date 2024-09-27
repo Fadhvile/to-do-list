@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>To-do Lists</title>
+</head>
+
+<body>
+    <div id="yeah!!!!">
+        
+    </div>
+    <ul id="list"></ul>
+    <script>
+        var input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Aktifitas";
+        input.id = "inputteks"
+
+        var button = document.createElement("button");
+        button.innerHTML = "Tambahkan";
+        button.onclick = function() {
+            if (input.value) {
+                var t = document.createElement('li');
+                t.textContent = input.value;
+
+                var button2 = document.createElement("button");
+                button2.innerHTML = "Selesai!";
+                button2.onclick = function() {
+                    button2.remove();
+                    t.remove();
+                };
+                t.appendChild(button2);
+
+
+                document.getElementById("list").appendChild(t);
+                input.value = '';
+            } else {
+                input.value = '';
+            };
+        };
+
+        var container = document.getElementById("yeah!!!!");
+        container.appendChild(input);
+        container.appendChild(button);
+    </script>
+    
+</body>
+
+</html>
